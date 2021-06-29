@@ -1,21 +1,16 @@
 ---
-layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
+author: Özge Sürer
 ---
 
-{% include base_path %}
+$$\\[0.3in]$$
 
-Journal Publications
-======
+## Journal Publications
 
 1. Haoxiang Yang, **Özge Sürer**, Daniel Duque, David Morton, Bismark Singh, Spencer Fox, Remy Pasco, Kelly Pierce, Paul Rathouz, Zhanwei Du, Michael Pignone, Mark E. Escott, Stephen I. Adler, Clairborne Johnston, Lauren Ancel Meyers. Design of COVID-19 staged alert systems to ensure healthcare capacity with minimal closures. Accepted at *Nature Communications*. [[link](https://www.medrxiv.org/content/10.1101/2020.11.26.20152520v2)]
 
 1. Seda Yanik, **Özge Sürer**, Basar Oztaysi. Designing sustainable energy regions using genetic algorithms and location-allocation approach. *Energy*, 161--172. 2016. [[link](https://www.sciencedirect.com/science/article/pii/S0360544215017612)]
 
-Under Review \& In Preparation
-======
+## Under Review \& In Preparation
 
 1. Paul J. Rathouz, Victoria Valencia, Patrick Chang, David P. Morton, Haoxiang Yang, **Özge Sürer**, Spencer J. Fox, Elizabeth C. Matsui, Alex B. Haynes, Lauren A. Meyers. Survival analysis methods for analysis of hospitalization data: Application to COVID-19 patient hospitalization experience. Submitted. [[link](https://www.medrxiv.org/content/10.1101/2021.04.14.21255511v1)].
 
@@ -26,8 +21,7 @@ Under Review \& In Preparation
 1. **Özge Sürer**, Daniel Apley, Edward C. Malthouse. Discovering structure in longitudinal data via coefficient tree regression. In preparation.
 
 
-Conference Proceedings \& Technical Reports
-======
+## Conference Proceedings \& Technical Reports
 
 1. Nazlican Arslan, **Özge Sürer**, David P. Morton, Haoxiang Yang, Michael Lachmann, Spencer Woody, Spencer J. Fox, and Lauren Ancel Meyers. COVID-19 alert stages, healthcare projections and
 mortality patterns in Austin, Texas. Technical Report, 2021. [[link](https://covid-19.tacc.utexas.edu/media/filer_public/15/4d/154defa8-9217-478e-a459-8fc4144c61b5/austin_covid_alert_stage_and_mortality_trends_-_ut_-_may_2021.pdf)]
@@ -42,15 +36,14 @@ mortality patterns in Austin, Texas. Technical Report, 2021. [[link](https://cov
 
 
 
-Book Chapters
-======
+
+## Book Chapters
 
 1. **Özge Sürer**, Sezi Cevik Onar, Ilker Topcu. Innovation strategy evaluation process using fuzzy cognitive mapping. *Intelligent Techniques in Engineering Management*, 107--128, 2015. [[link](https://link.springer.com/chapter/10.1007/978-3-319-17906-3_5)]
 
 1. Basar Oztaysi, **Özge Sürer**. Supply chain performance measurement using a SCOR based fuzzy VIKOR approach. *Supply Chain Management Under Fuzziness*, 199--224, 2014. [[link](https://link.springer.com/chapter/10.1007/978-3-642-53939-8_9)]
 
-Presentations & Invited Talks
-======
+## Presentations & Invited Talks
 
 1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. \textit{Alberta School of Business}, University of Alberta, Alberta, Canada, 2020.
 
