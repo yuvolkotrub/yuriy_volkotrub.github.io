@@ -8,6 +8,7 @@ date: 2012-03-01
 location: "San Francisco, California"
 ---
 
+
 The list of courses that I have taken during my graduate studies:
 
 * [Northwestern University](https://www.mccormick.northwestern.edu/industrial/)
