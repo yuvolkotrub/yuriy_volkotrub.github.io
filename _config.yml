@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &ozgesrr
+  username               : "https://twitter.com/ozgesrr?lang=en"
 facebook:
   username               :
   app_id                 :
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Ozge Surer"
   avatar           : "os.jpg"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "Postdoc @NAISE"
   location         : "Evanston-IL"
   employer         :
   pubmed           :
@@ -193,17 +193,6 @@ collections:
 
 # Defaults
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
   # _pages
   - scope:
       path: ""
@@ -232,7 +221,7 @@ defaults:
   # _portfolio
   - scope:
       path: ""
-      type: portfolio
+      type: research
     values:
       layout: single
       author_profile: true

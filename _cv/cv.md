@@ -21,7 +21,6 @@ EDUCATION
 * [Istanbul Technical University](https://isl.itu.edu.tr/en/academics/departments/industrial-engineering), Istanbul, Turkey
     + B.S. in Industrial Engineering, 2011
 
-{% include_relative cv/courses.md %}
 
 PROFESSIONAL EXPERIENCE
 ======
