@@ -21,7 +21,7 @@ EDUCATION
 * [Istanbul Technical University](https://isl.itu.edu.tr/en/academics/departments/industrial-engineering), Istanbul, Turkey
     + B.S. in Industrial Engineering, 2011
 
-/cv/courses.md
+[Courses](/cv/courses.md)
 
 PROFESSIONAL EXPERIENCE
 ======
@@ -35,14 +35,20 @@ PROFESSIONAL EXPERIENCE
 TEACHING EXPERIENCE
 ======
 
-{% for post in site.teaching %} {% include archive-single-cv.html %} {% endfor %}
+<ul>{% for post in site.teaching %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
 
 PUBLICATIONS & WORKING PAPERS
 ======
 
-{% for post in site.publications %} {% include archive-single-cv.html %} {% endfor %}
+<ul>{% for post in site.publications %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
 
 PRESENTATIONS & INVITED TALKS
 ======
 
-{% for post in site.talks %} {% include archive-single-talk-cv.html %} {% endfor %}
+<ul>{% for post in site.talks %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
