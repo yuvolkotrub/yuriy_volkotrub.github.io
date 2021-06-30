@@ -16,7 +16,7 @@ Journal Publications
 
 1. Seda Yanik, **Özge Sürer**, Basar Oztaysi. Designing sustainable energy regions using genetic algorithms and location-allocation approach. *Energy*, 161--172. 2016. [[link](https://www.sciencedirect.com/science/article/pii/S0360544215017612)]
 
-Under Review \& In Preparation
+Under Review & In Preparation
 ======
 
 1. Paul J. Rathouz, Victoria Valencia, Patrick Chang, David P. Morton, Haoxiang Yang, **Özge Sürer**, Spencer J. Fox, Elizabeth C. Matsui, Alex B. Haynes, Lauren A. Meyers. Survival analysis methods for analysis of hospitalization data: Application to COVID-19 patient hospitalization experience. Submitted. [[link](https://www.medrxiv.org/content/10.1101/2021.04.14.21255511v1)].
@@ -29,7 +29,7 @@ Under Review \& In Preparation
 Conference Proceedings
 ======
 
-1. **Özge Sürer**, Matthew Plumlee. Multistakeholder recommendation with provider constraints. *Proceedings of Winter Simulation Conference*, 2021.
+1. **Özge Sürer**, Matthew Plumlee. Calibration using Emulation of Filtered Simulation Results. *Proceedings of Winter Simulation Conference*, 2021.
 
 1. **Özge Sürer**, Robin Burke, Edward C. Malthouse. Multistakeholder recommendation with provider constraints. *Proceedings of the 12th ACM Conference on Recommender Systems*, 54--62, 2018. [[link](https://dl.acm.org/citation.cfm?id=3240350)]
 

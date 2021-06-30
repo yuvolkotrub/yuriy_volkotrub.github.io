@@ -1,8 +1,9 @@
 ---
-title: "Courses"
+layout: archive
 collection: cv
 type: "CV"
 permalink: /cv/courses
+author_profile: true
 ---
 
 The list of courses that I have taken during my graduate studies:
