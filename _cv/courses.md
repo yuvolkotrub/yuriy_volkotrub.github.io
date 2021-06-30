@@ -1,7 +1,5 @@
 ---
 title: "Courses"
-collection: cv
-permalink: /cv/courses
 ---
 
 
