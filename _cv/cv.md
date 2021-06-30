@@ -1,10 +1,16 @@
 ---
+layout: archive
+title: "CV"
+permalink: /cv/
+author_profile: true
 ---
 
+{% include base_path %}
 
 <a href="folder/CV_OzgeSurer.pdf#" class="download" title="Download CV as PDF">Download CV</a>			
 
-# EDUCATION
+EDUCATION
+======
 
 * [Northwestern University](https://www.mccormick.northwestern.edu/industrial/), Evanston, IL
     + Ph.D. candidate in Industrial Engineering and Management Sciences, Anticipated June 2020
@@ -19,7 +25,8 @@
 
 [Click to see the list of courses I have taken.](courses.html)
 
-# PROFESSIONAL EXPERIENCE
+PROFESSIONAL EXPERIENCE
+======
 
 * United Airlines, Chicago, IL
     + Statistics and Operations Research Intern, June 2019 – September 2019
@@ -27,7 +34,8 @@
 * Spiegel Research Center/Northwestern University
     + Research Fellow, September 2016 – Present
 
-# TEACHING EXPERIENCE
+TEACHING EXPERIENCE
+======
 
 * Northwestern University, Industrial Engineering and Management Sciences Department
     + Instructor
@@ -44,7 +52,8 @@ analysis and their applications, and covers descriptive statistics and statistic
 
 [Click to see more on the teaching experince.](teaching.html)
 
-# PUBLICATIONS & WORKING PAPERS
+PUBLICATIONS & WORKING PAPERS
+======
 
 * **Ozge Surer**, Daniel Apley, Edward C. Malthouse. Coefficient tree regression:  Fast, accurate and interpretable predictive modeling. Submitted.
 
@@ -62,7 +71,8 @@ analysis and their applications, and covers descriptive statistics and statistic
 
 * Basar Oztaysi, **Ozge Surer**. Supply chain performance measurement using a SCOR based fuzzy VIKOR approach. *Supply Chain Management Under Fuzziness*, 199--224, 2014.
 
-# PRESENTATIONS & INVITED TALKS
+PRESENTATIONS & INVITED TALKS
+======
 
 * **Ozge Surer**, Daniel Apley, Edward C. Malthouse. Coefficient tree regression for discovering structure in generalized linear models. *INFORMS Annual Meeting*, 2019.
 
