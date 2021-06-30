@@ -7,8 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-<a href="folder/CV_OzgeSurer.pdf#" class="download" title="Download CV as PDF">Download CV</a>			
-
 EDUCATION
 ======
 
