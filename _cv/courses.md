@@ -1,9 +1,12 @@
 ---
-date: "`r Sys.Date()`"
-author: Özge Sürer
+title: "Courses"
+collection: cv
+type: "CV"
+permalink: /cv/courses
+venue: "UC San Francisco, Department of Testing"
+date: 2012-03-01
+location: "San Francisco, California"
 ---
-
-$$\\[0.5in]$$
 
 The list of courses that I have taken during my graduate studies:
 
