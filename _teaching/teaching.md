@@ -12,7 +12,7 @@ Teaching experience
 
 * **Instructor**
     * **Northwestern University, Industrial Engineering and Management Sciences Department**
-        + IEMS 303 Statistics (Undergraduate level) (Spring 2019) <embed src="https://ozgesurer.github.io/files/STAR_poster.pdf">
+        + IEMS 303 Statistics (Undergraduate level) (Spring 2019) [here](<embed src="https://ozgesurer.github.io/files/STAR_poster.pdf">)
             - Class Size: 29
             - Instructor Overall Effectiveness: 5.35/6.00
             - Description: foundations of statistics and statistical computing for data analysis and their applications, and descriptive statistics and statistical inference
