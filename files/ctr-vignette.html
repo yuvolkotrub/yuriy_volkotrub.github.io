@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+        <meta name="author" content="Özge Sürer, Daniel Apley and Edward Malthouse" />
+    
+        <meta name="date" content="2021-01-31" />
+    
+    <title>CTR Vignette</title>
+
+        <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="site_libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="site_libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+        <script src="site_libs/navigation-1.1/tabsets.js"></script>
+        <link href="site_libs/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+        <script src="site_libs/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+        <link href="site_libs/readthedown-0.1/readthedown.css" rel="stylesheet" />
+        <link href="site_libs/readthedown-0.1/readthedown_fonts.css" rel="stylesheet" />
+        <script src="site_libs/readthedown-0.1/readthedown.js"></script>
+        <script src="site_libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+        <script src="site_libs/viz-0.3/viz.js"></script>
+        <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+        <script src="site_libs/grViz-binding-1.0.0/grViz.js"></script>
+        <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+        <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+    
+    
+        <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          background-color: #ffffff;
+          color: #a0a0a0;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+      div.sourceCode
+        { color: #1f1c1b; background-color: #ffffff; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span { color: #1f1c1b; } /* Normal */
+      code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+      code span.an { color: #ca60ca; } /* Annotation */
+      code span.at { color: #0057ae; } /* Attribute */
+      code span.bn { color: #b08000; } /* BaseN */
+      code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+      code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #924c9d; } /* Char */
+      code span.cn { color: #aa5500; } /* Constant */
+      code span.co { color: #898887; } /* Comment */
+      code span.cv { color: #0095ff; } /* CommentVar */
+      code span.do { color: #607880; } /* Documentation */
+      code span.dt { color: #0057ae; } /* DataType */
+      code span.dv { color: #b08000; } /* DecVal */
+      code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+      code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+      code span.fl { color: #b08000; } /* Float */
+      code span.fu { color: #644a9b; } /* Function */
+      code span.im { color: #ff5500; } /* Import */
+      code span.in { color: #b08000; } /* Information */
+      code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+      code span.op { color: #1f1c1b; } /* Operator */
+      code span.ot { color: #006e28; } /* Other */
+      code span.pp { color: #006e28; } /* Preprocessor */
+      code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+      code span.sc { color: #3daee9; } /* SpecialChar */
+      code span.ss { color: #ff5500; } /* SpecialString */
+      code span.st { color: #bf0303; } /* String */
+      code span.va { color: #0057ae; } /* Variable */
+      code span.vs { color: #bf0303; } /* VerbatimString */
+      code span.wa { color: #bf0303; } /* Warning */
+    </style>
+    
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    
+    <!-- code download -->
+    
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+  	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+   	
+         <!-- readthedown start -->   
+   <div id="content" data-toggle="wy-nav-shift">
+     <nav id="nav-top" role="navigation" aria-label="top navigation">
+       <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+     </nav>
+         
+   
+      
+      <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Özge Sürer</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="education.html">Education</a>
+      </li>
+      <li>
+        <a href="research.html">Research</a>
+      </li>
+      <li>
+        <a href="publications.html">Publications</a>
+      </li>
+      <li>
+        <a href="teaching.html">Teaching</a>
+      </li>
+      <li>
+        <a href="software.html">Software</a>
+      </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+        <a href="contact.html">
+          <span class="fa fa-envelope fa-lg"></span>
+           
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/ozgesurer">
+          <span class="fa fa-github fa-lg"></span>
+           
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/ozgesrr?lang=en">
+          <span class="fa fa-twitter fa-lg"></span>
+           
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/özge-sürer-48224a33">
+          <span class="fa fa-linkedin fa-lg"></span>
+           
+        </a>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=3xDBhh4AAAAJ">
+          <span class="ai ai-google-scholar"></span>
+           
+        </a>
+      </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+      </div><!--/.navbar -->
+        
+      <h1 class="title">CTR Vignette</h1>
+      
+         <!-- readthedown authors -->
+   <div id="sidebar">
+    <h2><a href="#content">CTR Vignette</a></h2>
+    <div id="toc">
+      <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#coefficient-tree-regression-ctr">Coefficient Tree Regression (CTR)</a>
+      <ul>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#example-without-cv">Example (without CV)</a></li>
+      </ul></li>
+      <li><a href="#coefficient-tree-regression-with-cross-validation">Coefficient Tree Regression with Cross-Validation</a>
+      <ul>
+      <li><a href="#description-1">Description</a></li>
+      <li><a href="#usage-1">Usage</a></li>
+      <li><a href="#example-with-cv">Example (with CV)</a></li>
+      </ul></li>
+      <li><a href="#coefficient-tree-regression-with-warm-start-strategy">Coefficient Tree Regression with Warm-Start Strategy</a>
+      <ul>
+      <li><a href="#description-2">Description</a></li>
+      <li><a href="#usage-2">Usage</a></li>
+      <li><a href="#example-with-cv-and-warm-start-strategy">Example (with CV and warm-start strategy)</a></li>
+      </ul></li>
+      <li><a href="#reference">Reference</a></li>
+      </ul>
+    </div>
+    <div id="postamble" data-toggle="wy-nav-shift" class="status">
+                  <p class="author"><span class="glyphicon glyphicon-user"></span> Özge Sürer, Daniel Apley and Edward Malthouse</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-01-31</p>
+          </div>
+   </div>
+     
+
+   
+      
+   
+<!-- Don't indent these lines or it will mess pre blocks indentation --> 
+<div id="main">
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>The proliferation of data collection technologies commonly results in datasets of immense size with a large number of predictors. In practice, many groups of predictors often share a common regression coefficient (i.e., the predictors in the group affect the response only via their collective sum), where the groups are unknown in advance and must be discovered from the data. Sürer et. al. (2020) proposes an algorithm called coefficient tree regression (CTR) to discover the unknown group structure and fit the resulting regression model. Discovering unknown group structure automatically from the data is fundamentally important since the group structure leads to simple, parsimonious and interpretable models. This vignette describes the usage of CTR in R. See the Sürer et. al. (2020) reference paper listed below for details.</p>
+<p>We consider the standard linear regression model with <span class="math inline">\(n\)</span> observations and <span class="math inline">\(p\)</span> predictors having response observations <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> and predictor observations <span class="math inline">\(x_{i, j}\)</span>, <span class="math inline">\(i = 1, 2, \ldots, n\)</span>, <span class="math inline">\(j = 1, 2, \ldots, p\)</span>: <span class="math display">\[
+\mathbf{y} = \beta_{1} \mathbf{x}_1 + \beta_{2} \mathbf{x}_{2} + \cdots + \beta_{p} \mathbf{x}_{p} + \boldsymbol{\epsilon},
+\]</span> where <span class="math inline">\(\mathbf{y} = \big[y_1, y_2, \ldots, y_n\big]^\mathsf{T}\)</span>, <span class="math inline">\(\mathbf{x}_j = \big[x_{1,j}, x_{2,j}, \ldots, x_{n,j}\big]^\mathsf{T}\)</span> and <span class="math inline">\(\boldsymbol{\epsilon} \sim \mathrm{N}(\mathbf{0}, \sigma^2 \mathbf{I})\)</span> are <span class="math inline">\(n\)</span> dimensional vectors of the response observations, the predictor observations, and the noise, respectively, and each <span class="math inline">\(\beta_j\)</span> is a regression coefficient.</p>
+<p>If the predictors within a group share a common coefficient, this is equivalent to the group of predictors impacting the response only via a single derived predictor that is the sum of the predictors in the group. In other words, letting <span class="math inline">\(G_i\)</span> denote the set of indices in the <span class="math inline">\(i\)</span>th group (for <span class="math inline">\(i = 1, 2, \ldots, k\)</span>, where <span class="math inline">\(k\)</span> is the number of distinct groups), and considering the derived predictor <span class="math inline">\(\mathbf{z}_i = \sum\limits_{j \in G_i} \mathbf{x}_j\)</span>, the linear regression model described above can be written as <span class="math display">\[
+\mathbf{y} = \alpha_{1} \mathbf{z}_1 + \alpha_{2} \mathbf{z}_{2} + \cdots + \alpha_{k} \mathbf{z}_{k} + \boldsymbol{\epsilon}. \]</span> Each <span class="math inline">\(\alpha_i\)</span> represents the common regression coefficient shared by all predictors in group <span class="math inline">\(i\)</span>.</p>
+<p><code>CTR</code> package finds the groups by recursively splitting the predictors into sets that have similar coefficients. Iterative nature of the <code>CTR</code> results in a highly-interpretable tree structure representing the groups of predictors and their associated coefficients (the final group structure, as well as the sequence of splits that produced the group structure, which contains information on higher-level group structures).</p>
+<p>The package also makes use computational features of both linear regression (fast model updating when adding/modifying a predictor in the model) and regression trees (fast forming and splitting the groups of predictors). Due to highly efficient updates and techniques such as warm starts and heuristic search procedure, <code>CTR</code> can explore the group structure very fast. The core of <code>CTR</code> package is a set of highly optimized linear algebra subroutines, which make for very fast execution.</p>
+<p>The package also includes methods for prediction, plotting and visualizing the tree structure, and methods that perform <span class="math inline">\(K\)</span>-fold cross-validation (CV) and warm-start strategy that will be described.</p>
+</div>
+<div id="installation" class="section level1">
+<h1>Installation</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CTR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: DiagrammeR</span></span></code></pre></div>
+</div>
+<div id="coefficient-tree-regression-ctr" class="section level1">
+<h1>Coefficient Tree Regression (CTR)</h1>
+<div id="description" class="section level2">
+<h2>Description</h2>
+<p><code>CTR</code> sequentially adds derived predictors (the sum of predictors in groups) to the model. After each iteration <span class="math inline">\(k\)</span>, the number of derived predictors in the model is <span class="math inline">\(k\)</span>. This process continues until we obtain a final set of derived predictors satisfying the termination criterion. Users might pick a value <code>Kmax</code> up front for the total number of derived predictors in the fitted CTR model at termination. Alternatively, the best model size (i.e., the best value of the number of derived predictors in the final model) can be chosen using <span class="math inline">\(K\)</span>-fold cross validation (CV). Users may change the <code>cv</code> option depending on their preferences. If CV is used, a user must select <code>Kmax</code> as the upper bound on the best model size. The default is <code>Kmax = 20</code>. However, in some cases a better model might be obtained with <code>Kmax &gt; 20</code>. In this case, the warm-start feature allows users to input the existing <code>CTR</code> object to the continuation of the CTR.</p>
+</div>
+<div id="usage" class="section level2">
+<h2>Usage</h2>
+<p><code>CTR(X, y, Kmax = 5, cv = 0, warm.start = NULL)</code></p>
+</div>
+<div id="arguments" class="section level2">
+<h2>Arguments</h2>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Input</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>X</code></td>
+<td>The <span class="math inline">\(n \times p\)</span> design matrix of predictor observations to which the CTR is fit.</td>
+</tr>
+<tr class="even">
+<td><code>y</code></td>
+<td>The <span class="math inline">\(n\)</span> dimensional vector of the response observations.</td>
+</tr>
+<tr class="odd">
+<td><code>Kmax</code></td>
+<td>A numeric scalar that specifies the upper bound on the best model size. If <code>cv = 0</code>, it specifies the model size at termination.</td>
+</tr>
+<tr class="even">
+<td><code>cv</code></td>
+<td>A numeric scalar that specifies the number of folds used in <span class="math inline">\(K\)</span>-fold CV. If <code>cv = 0</code>, the argument allows users to fit the CTR model with <code>Kmax</code> derived predictors at termination without using CV.</td>
+</tr>
+<tr class="odd">
+<td><code>warm.start</code></td>
+<td>If <code>NULL</code>, start fitting CTR model from scratch. Otherwise, input object of class <code>CTR</code> for the use of warm-start strategy.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="example-without-cv" class="section level2">
+<h2>Example (without CV)</h2>
+<p>We generate a dataset with <span class="math inline">\(p = 50\)</span> and <span class="math inline">\(n = 5,000\)</span>, where <span class="math inline">\(\mathbf{X}\)</span> is the <span class="math inline">\(n \times p\)</span> design matrix of predictor observations and <span class="math inline">\(\mathbf{y}\)</span> is the <span class="math inline">\(n\)</span> dimensional vector of the response observations. We use this dataset throughout the vignette:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate some data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1122</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(n <span class="sc">*</span> p), <span class="at">nrow =</span> n)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">10</span>), <span class="sc">-</span><span class="fu">rev</span>(<span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">19</span>))<span class="sc">/</span><span class="dv">10</span>, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">19</span>)<span class="sc">/</span><span class="dv">10</span>, <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">10</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>sigmasq <span class="ot">&lt;-</span> ((<span class="dv">1</span><span class="sc">/</span><span class="fl">0.9</span>) <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">*</span>(<span class="fu">t</span>(beta)<span class="sc">%*%</span><span class="fu">cov</span>(X)<span class="sc">%*%</span>beta)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> X <span class="sc">%*%</span> beta <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigmasq))</span></code></pre></div>
+<p>We first illustrate the usage of the most basic call to <code>CTR</code> without using CV. As mentioned above <code>CTR</code> requires a termination criterion that represents the number of derived predictors in the model at termination. The best model size can be obtained via <span class="math inline">\(K\)</span>-fold CV. However, in some situations, users might want to obtain only the prespecified number of derived predictors instead of finding the best model size via CV.</p>
+<p>As mentioned above, CTR iteratively identifies the unknown groups each of which is a set of indices of predictors that defines one derived predictor <span class="math inline">\(\mathbf{z}_i\)</span> in the CTR model. If <span class="math inline">\(k\)</span> groups are predefined at termination, then <span class="math inline">\(G_{1} \cup G_{2} \cup \cdots \cup G_{k}\)</span> denotes the indices of all predictors in all groups in the model after iteration <span class="math inline">\(k\)</span>. In order to observe the variable selection procedure, let <span class="math inline">\(G_{k+1}\)</span> denote the excluded group of predictors (which is equivalent to group <span class="math inline">\(G_{k+1}\)</span> having a coefficient of zero). Therefore, after iteration <span class="math inline">\(k\)</span> at termination, we have <span class="math inline">\(k+1\)</span> disjoint groups. <code>CTR</code> uses the settings <code>cv = 0</code> (CV is not allowed) and <code>Kmax = k</code> to denote the total number of derived predictors in the final fitted <code>CTR</code> model.</p>
+<p>In this example, we set <code>cv = 0</code> and <code>Kmax = 6</code> assuming that we can obtain an interpretable and accurate model with 6 derived predictors at termination.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit CTR model</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>CTR.fit <span class="ot">&lt;-</span> <span class="fu">CTR</span>(X, y, <span class="at">Kmax =</span> <span class="dv">6</span>, <span class="at">cv =</span> <span class="dv">0</span>, <span class="at">warm.start =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<p><code>CTR.fit</code> is an object of class <code>CTR</code> that contains all the relevant information of the fitted model for further use. Various methods are provided for the object such as <code>summary</code>, <code>coef</code>, <code>predict</code> and <code>print</code> that enable users to execute those tasks.</p>
+<p>After fitting the CTR model, we can summarize the fitted <code>CTR</code> object as follows:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Summarize the fitted CTR model</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(CTR.fit)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Coefficient Tree Regression</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n = 5000 </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; p = 50 </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; k = 6 (number of derived predictors at termination)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40 predictors included in 6 groups at termination </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Training r.squared (at termination) = 0.896</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Final group structure:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (Group)(Size)(alpha)(Ids)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  3 1.05 {31-33}</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  4 1.44 {34-37}</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  13 1.95 {38-50}</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  4 -1.41 {14-17}</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  3 -1.13 {18-20}</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  13 -1.95 {1-13}</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  10 0 {21-30}</span></span></code></pre></div>
+<p>A user can use the method <code>summary</code> to print the sample size (<span class="math inline">\(n\)</span>), the number of predictors (<span class="math inline">\(p\)</span>), the number of derived predictors at termination (<span class="math inline">\(k\)</span>) and the number of predictors included in the final CTR group structure. Moreover, it displays some details for each group in the final model such as the number of predictors (size), the estimated group coefficient (<span class="math inline">\(\alpha\)</span>) and the indices of the predictors (predictor ids) included in each group <span class="math inline">\(G_i\)</span> <span class="math inline">\(\forall i = 1, \ldots, k+1\)</span>.</p>
+<p>Returning to our example, since we have the setting <code>Kmax = 6, cv = 0</code>, CTR identifies 6 nonzero-coefficient groups with the final training <span class="math inline">\(R^2 = 0.896\)</span>. In the final group structure, 40 predictors out of 50 predictors are included in the 6 groups such that the groups are <span class="math inline">\(\{31, \ldots, 33\}\)</span>, <span class="math inline">\(\{34, \ldots, 37\}\)</span>, <span class="math inline">\(\{38, \ldots, 50\}\)</span>, <span class="math inline">\(\{14, \ldots, 17\}\)</span>, <span class="math inline">\(\{18, \ldots, 20\}\)</span> and <span class="math inline">\(\{1, \ldots, 13\}\)</span>. The remaning 10 predictors are therefore included in the zero-coefficient group <span class="math inline">\(\{21, \ldots, 30\}\)</span>.</p>
+<p>We then extract the estimated common regression coefficients for each group <span class="math inline">\(G_i\)</span> in the final CTR model via <code>coef</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract the estimated coefficients of the derived predictors</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(CTR.fit)<span class="sc">$</span>alpha</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   [,1]</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; intercept -0.008638712</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z1         1.049993072</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z2         1.439822921</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z3         1.949452029</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z4        -1.411848002</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z5        -1.132260172</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z6        -1.947570890</span></span></code></pre></div>
+<p>In the example, since we have 6 disjoint groups of predictors with nonzero coefficients at termination, CTR outputs 6 estimated group coefficients along with the intercept. Note that the number of estimated coefficients decreases from 50 in the original regression model to 6 in the CTR model. In this sense, CTR encourages parsimonious models by grouping the predictors with nonzero coefficients.</p>
+<p>We can also extract the estimated standard regression coefficients using the estimated group coefficients. The estimated standard regression coefficients for the predictors in group <span class="math inline">\(G_i\)</span> are the same as the estimated group coefficient of group <span class="math inline">\(G_i\)</span>.</p>
+<p>In our example, recall that the first group includes 3 predictors <span class="math inline">\(\mathbf{x}_{31}, \ldots, \mathbf{x}_{33}\)</span>, and the estimated coefficient of the corresponding derived predictor <span class="math inline">\(\mathbf{z}_1\)</span> (i.e., <span class="math inline">\(\mathbf{z}_1 = \mathbf{x}_{31} + \cdots + \mathbf{x}_{33}\)</span>) is <span class="math inline">\(1.05\)</span>. Therefore, the estimated standard coefficient of each of <span class="math inline">\(\mathbf{x}_{33}, \ldots, \mathbf{x}_{35}\)</span> is <span class="math inline">\(1.05\)</span>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract the estimated standard regression coefficients</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(CTR.fit)<span class="sc">$</span>beta</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   [,1]</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; intercept -0.008638712</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x1        -1.947570890</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x2        -1.947570890</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x3        -1.947570890</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x4        -1.947570890</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x5        -1.947570890</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x6        -1.947570890</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x7        -1.947570890</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x8        -1.947570890</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x9        -1.947570890</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x10       -1.947570890</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x11       -1.947570890</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x12       -1.947570890</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x13       -1.947570890</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x14       -1.411848002</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x15       -1.411848002</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x16       -1.411848002</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x17       -1.411848002</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x18       -1.132260172</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x19       -1.132260172</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x20       -1.132260172</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x21        0.000000000</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x22        0.000000000</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x23        0.000000000</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x24        0.000000000</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x25        0.000000000</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x26        0.000000000</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x27        0.000000000</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x28        0.000000000</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x29        0.000000000</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x30        0.000000000</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x31        1.049993072</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x32        1.049993072</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x33        1.049993072</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x34        1.439822921</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x35        1.439822921</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x36        1.439822921</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x37        1.439822921</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x38        1.949452029</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x39        1.949452029</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x40        1.949452029</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x41        1.949452029</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x42        1.949452029</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x43        1.949452029</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x44        1.949452029</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x45        1.949452029</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x46        1.949452029</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x47        1.949452029</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x48        1.949452029</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x49        1.949452029</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x50        1.949452029</span></span></code></pre></div>
+<p>Predictions can be made based on the fitted <code>CTR</code> object. <code>newdata</code> is for the new input matrix.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Predict</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(CTR.fit, <span class="at">newdata =</span> X[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            [,1]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] -20.609696</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] -12.709392</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,]   4.532713</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [4,] -16.968075</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [5,]   1.363891</span></span></code></pre></div>
+<p>As mentioned above <code>CTR</code> results in a highly-interpretable tree structure representing the sequence of group structures produced after each iteration. <code>CTR</code> grows the tree by splitting one of the groups in the set at the current iteration <span class="math inline">\(k\)</span> into two. After iteration <span class="math inline">\(k\)</span>, we have <span class="math inline">\(k+1\)</span> disjoint groups. The existing groups that were not split are carried to the next iteration without modification. Thus, the number of groups increases by one during each iteration. The hierarchical nature of the CTR provides insight into the importance of the predictors, their higher-level grouping structures, and how they relate to each other. <code>print</code> displays a visual representation of the fitted <code>CTR</code> object as follows:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Print the tree</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(CTR.fit, <span class="at">option =</span> <span class="st">&quot;text&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (Group)(alpha){Ids}</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (0.1)(0){1-50}(s)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   (1.1)(1.6804){31-50}</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    (2.1)(1.7015){31-50}(s)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     (3.1)(1.2657){31-37}</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      (4.1)(1.2688){31-37}(s)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       (5.1)(1.0443){31-33}</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.1)(1.05){31-33}</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       (5.2)(1.4407){34-37}</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.2)(1.4398){34-37}</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     (3.2)(1.9433){38-50}</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      (4.2)(1.9476){38-50}</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       (5.3)(1.948){38-50}</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.3)(1.9495){38-50}</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   (1.2)(0){1-30}(s)</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    (2.2)(-1.6985){1-20}</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     (3.3)(-1.7073){1-20}(s)</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      (4.3)(-1.2936){14-20}</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       (5.4)(-1.2946){14-20}(s)</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.4)(-1.4118){14-17}</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.5)(-1.1323){18-20}</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      (4.4)(-1.9489){1-13}</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       (5.5)(-1.9475){1-13}</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.6)(-1.9476){1-13}</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    (2.3)(0){21-30}</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     (3.4)(0){21-30}</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      (4.5)(0){21-30}</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       (5.6)(0){21-30}</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        (6.7)(0){21-30}</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Print the tree</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(CTR.fit, <span class="at">option =</span> <span class="st">&quot;tree&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-deca0e2aec9682a3823d" style="width:672px;height:672px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-deca0e2aec9682a3823d">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"{1-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"3,7!\"] \n  \"2\" [label = \"{31-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"1,6!\"] \n  \"3\" [label = \"{1-30}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"4.5,6!\"] \n  \"4\" [label = \"{31-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"1,5!\"] \n  \"5\" [label = \"{1-20}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"4,5!\"] \n  \"6\" [label = \"{21-30}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"6,5!\"] \n  \"7\" [label = \"{31-37}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"0.5,4!\"] \n  \"8\" [label = \"{38-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"2,4!\"] \n  \"9\" [label = \"{1-20}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"4,4!\"] \n  \"10\" [label = \"{21-30}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"6,4!\"] \n  \"11\" [label = \"{31-37}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"0.5,3!\"] \n  \"12\" [label = \"{38-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"2,3!\"] \n  \"13\" [label = \"{14-20}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"3.5,3!\"] \n  \"14\" [label = \"{1-13}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"5,3!\"] \n  \"15\" [label = \"{21-30}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"6,3!\"] \n  \"16\" [label = \"{31-33}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"0,2!\"] \n  \"17\" [label = \"{34-37}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"1,2!\"] \n  \"18\" [label = \"{38-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"2,2!\"] \n  \"19\" [label = \"{14-20}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"3.5,2!\"] \n  \"20\" [label = \"{1-13}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"5,2!\"] \n  \"21\" [label = \"{21-30}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"6,2!\"] \n  \"22\" [label = \"{31-33}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"0,1!\"] \n  \"23\" [label = \"{34-37}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"1,1!\"] \n  \"24\" [label = \"{38-50}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"2,1!\"] \n  \"25\" [label = \"{14-17}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"3,1!\"] \n  \"26\" [label = \"{18-20}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"4,1!\"] \n  \"27\" [label = \"{1-13}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"5,1!\"] \n  \"28\" [label = \"{21-30}\", shape = \"rectangle\", fillcolor = \"#F0F8FF\", fontcolor = \"#000000\", pos = \"6,1!\"] \n\"1\"->\"2\" [label = \"1.68\"] \n\"1\"->\"3\" [label = \"0\"] \n\"2\"->\"4\" [label = \"1.7\"] \n\"3\"->\"5\" [label = \"-1.7\"] \n\"3\"->\"6\" [label = \"0\"] \n\"4\"->\"7\" [label = \"1.27\"] \n\"4\"->\"8\" [label = \"1.94\"] \n\"5\"->\"9\" [label = \"-1.71\"] \n\"6\"->\"10\" [label = \"0\"] \n\"7\"->\"11\" [label = \"1.27\"] \n\"8\"->\"12\" [label = \"1.95\"] \n\"9\"->\"13\" [label = \"-1.29\"] \n\"9\"->\"14\" [label = \"-1.95\"] \n\"10\"->\"15\" [label = \"0\"] \n\"11\"->\"16\" [label = \"1.04\"] \n\"11\"->\"17\" [label = \"1.44\"] \n\"12\"->\"18\" [label = \"1.95\"] \n\"13\"->\"19\" [label = \"-1.29\"] \n\"14\"->\"20\" [label = \"-1.95\"] \n\"15\"->\"21\" [label = \"0\"] \n\"16\"->\"22\" [label = \"1.05\"] \n\"17\"->\"23\" [label = \"1.44\"] \n\"18\"->\"24\" [label = \"1.95\"] \n\"19\"->\"25\" [label = \"-1.41\"] \n\"19\"->\"26\" [label = \"-1.13\"] \n\"20\"->\"27\" [label = \"-1.95\"] \n\"21\"->\"28\" [label = \"0\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>For each group structure produced at the end of each iteration, <code>print</code> with an option <code>text</code> outputs the estimated group coefficients (<span class="math inline">\(\alpha\)</span>) and the indices of the predictors (predictor ids) included in each group. Groups are printed using two indices such that the first index corresponds to the iteration number <span class="math inline">\(k\)</span> and the second index represents the group index <span class="math inline">\(i\)</span> at the current iteration.</p>
+<p>Returning back to our example, for initialization, since <code>CTR</code> has not identified any derived predictor yet, we have only the single group <span class="math inline">\(G_{0,1}\)</span>, which contains all predictors (i.e., <span class="math inline">\(G_{0,1} = \{1, \ldots, 50\}\)</span>) and assigns them a common coefficient of zero. During iteration <span class="math inline">\(k = 1\)</span>, CTR splits the initial group <span class="math inline">\(G_{0,1}\)</span> into two groups <span class="math inline">\(G_{1,1}\)</span> and <span class="math inline">\(G_{1,2}\)</span>, where <span class="math inline">\(G_{1,1} = \{31, \ldots, 50\}\)</span> with a group coefficient of <span class="math inline">\(1.68\)</span>, and <span class="math inline">\(G_{1,2} = \{1, \ldots, 30\}\)</span> with a coefficient of <span class="math inline">\(0\)</span> (i.e., <span class="math inline">\(G_{1,2}\)</span> is the excluded group of predictors).</p>
+<p>During iteration <span class="math inline">\(k = 2\)</span>, <code>CTR</code> finds a new group of predictors by splitting the zero-coefficient group <span class="math inline">\(G_{1,2}\)</span> into a nonzero-coefficient group <span class="math inline">\(G_{2,2} = \{1, \ldots, 20\}\)</span> with a non-zero coefficient <span class="math inline">\(-1.70\)</span> and a zero-coefficient group <span class="math inline">\(G_{2,3} = \{21, \ldots, 30\}\)</span>. The remaining group <span class="math inline">\(G_{1,1}\)</span> stays the same, i.e., <span class="math inline">\(G_{1,1} = G_{2,1} = \{31, \ldots, 50\}\)</span> with an updated coefficient <span class="math inline">\(1.70\)</span>. Thus, at this point of the <code>CTR</code>, the predictors can roughly be divided into a group of predictors with negative coefficients (<span class="math inline">\(\mathbf{x}_1, \ldots, \mathbf{x}_{20}\)</span>) and a group with positive coefficients (<span class="math inline">\(\mathbf{x}_{31}, \ldots, \mathbf{x}_{50}\)</span>).</p>
+<p>Within an existing group of predictors, if some are more or less influential compared to the others in this group, <code>CTR</code> can split them into separate subgroups at subsequent iterations to properly adjust their coefficients. In the example, this type of split occurs during the rest of the iterations <span class="math inline">\(k = 3, 4, 5, 6\)</span>. For example, during iteration <span class="math inline">\(k = 3\)</span>, <span class="math inline">\(G_{2,1}\)</span> is split into two nonzero coefficient groups <span class="math inline">\(G_{3,1} = \{31, \ldots, 37\}\)</span> and <span class="math inline">\(G_{3,2} = \{38, \ldots, 50\}\)</span> with coefficients of <span class="math inline">\(1.27\)</span> and <span class="math inline">\(1.94\)</span>. The remaning groups stay the same, i.e., <span class="math inline">\(G_{2,2} = G_{3,3} = \{1, \ldots, 20\}\)</span> and <span class="math inline">\(G_{2,3} = G_{3,4} = \{21, \ldots, 30\}\)</span> with updated coefficients <span class="math inline">\(-1.71\)</span> and <span class="math inline">\(0\)</span>.</p>
+<p>After iteration <span class="math inline">\(k = 6\)</span>, <code>CTR</code> terminated with the final group structure. The groups in the model are <span class="math inline">\(G_{6,1} = \{31, \ldots, 33\}\)</span>, <span class="math inline">\(G_{6,2} = \{34, \ldots, 37\}\)</span>, <span class="math inline">\(G_{6,3} = \{38, \ldots, 50\}\)</span>, <span class="math inline">\(G_{6,4} = \{14, \ldots, 17\}\)</span>, <span class="math inline">\(G_{6,5} = \{18, \ldots, 20\}\)</span> and <span class="math inline">\(G_{6,6} = \{1, \ldots, 13\}\)</span>, with coefficients of <span class="math inline">\(1.05\)</span>, <span class="math inline">\(1.44\)</span>, <span class="math inline">\(1.95\)</span>, <span class="math inline">\(-1.41\)</span>, <span class="math inline">\(-1.13\)</span>, <span class="math inline">\(-1.95\)</span>, and the excluded group is <span class="math inline">\(G_{6,7} = \{21, \ldots, 30\}\)</span>.</p>
+<p>As mentioned at a higher level the predictors can roughly be divided into a group of predictors with negative coefficients (<span class="math inline">\(\mathbf{x}_1, \ldots, \mathbf{x}_{20}\)</span>) and a group with positive coefficients (<span class="math inline">\(\mathbf{x}_{31}, \ldots, \mathbf{x}_{50}\)</span>). Among positive coefficient predictors, the predictors <span class="math inline">\(\mathbf{x}_{38}, \ldots, \mathbf{x}_{50}\)</span> are the most influential ones (i.e., <span class="math inline">\(G_{6,3} = \{38, \ldots, 50\}\)</span> with a coefficient of <span class="math inline">\(1.95\)</span>), whereas the predictors <span class="math inline">\(\mathbf{x}_{31}, \ldots, \mathbf{x}_{33}\)</span> are the least influential ones (i.e., <span class="math inline">\(G_{6,1} = \{31, \ldots, 33\}\)</span> with a coefficient of <span class="math inline">\(1.05\)</span>). Among negative coefficient predictors, the predictors <span class="math inline">\(\mathbf{x}_{1}, \ldots, \mathbf{x}_{13}\)</span> are the most influential ones (i.e., <span class="math inline">\(G_{6,6} = \{1, \ldots, 13\}\)</span> with a coefficient of <span class="math inline">\(-1.95\)</span>), whereas the predictors <span class="math inline">\(\mathbf{x}_{18}, \ldots, \mathbf{x}_{20}\)</span> are the least influential ones (i.e., <span class="math inline">\(G_{6,5} = \{18, \ldots, 20\}\)</span> with a coefficient of <span class="math inline">\(-1.13\)</span>). The estimated coefficients are close to the true coefficients since the dataset is generated based on the linear model <span class="math display">\[\mathbf{y} = \beta_{1} \mathbf{x}_1 + \beta_{2} \mathbf{x}_{2} + \cdots + \beta_{p} \mathbf{x}_{p} + \boldsymbol{\epsilon},\]</span> where <span class="math inline">\(\beta_1 = \cdots = \beta_{10} = -2\)</span>, <span class="math inline">\(\beta_j = -\bigg(\frac{j - 1}{10}\bigg) \text{ for } j = 11, \ldots, 20\)</span>, <span class="math inline">\(\beta_{21} = \cdots = \beta_{30} = 0\)</span>, <span class="math inline">\(\beta_j = \frac{j - 1}{10} - 2 \text{ for } j = 31, \ldots, 40\)</span>, and <span class="math inline">\(\beta_{41} = \cdots = \beta_{50} = 2\)</span>.</p>
+</div>
+</div>
+<div id="coefficient-tree-regression-with-cross-validation" class="section level1">
+<h1>Coefficient Tree Regression with Cross-Validation</h1>
+<div id="description-1" class="section level2">
+<h2>Description</h2>
+<p><code>CTR</code> requires a termination criterion to determine the number of derived predictors in the model at termination. Note that the model size is the only tuning parameter for CTR, and this can be chosen using <span class="math inline">\(K\)</span>-fold CV. If <code>cv &gt; 1</code>, the package performs <span class="math inline">\(K\)</span>-fold CV, where <span class="math inline">\(K\)</span> = <code>cv</code>, to find the best model size, and then fits the final <code>CTR</code> model of this chosen size using all the data. In CV, a user must select an upper bound <code>Kmax</code> on the best model size. We recommend using <span class="math inline">\(k_{max} = 20\)</span> for the reasons that we discuss in Section 5 in the Sürer et. al. (2020) reference paper listed below.</p>
+</div>
+<div id="usage-1" class="section level2">
+<h2>Usage</h2>
+<p><code>CTR(X, y, Kmax = 20, cv = 10, warm.start = NULL)</code></p>
+</div>
+<div id="example-with-cv" class="section level2">
+<h2>Example (with CV)</h2>
+<p>We still act on the sample data loaded before. In this example, we set <code>cv = 10</code> to perform 10-fold CV. We use <code>Kmax = 20</code> as an upper bound on the total number of derived predictors at termination.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit CTR model via CV</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>cvCTR.fit <span class="ot">&lt;-</span> <span class="fu">CTR</span>(X, y, <span class="at">Kmax =</span> <span class="dv">20</span>, <span class="at">cv =</span> <span class="dv">10</span>, <span class="at">warm.start =</span> <span class="cn">NULL</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Start cross-validation</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; End cross-validation</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ...........................</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Optimal group number : 20</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ...........................</span></span></code></pre></div>
+<p><code>cvCTR.fit</code> is an object of class <code>CTR</code> that contains all the relevant information of the fitted model for further use. It also contains the fitted models of size <span class="math inline">\(k = 1, 2, \ldots, 20\)</span>, the CV SSE values for each size model, the CV partition indices in case a user prefers to apply a warm-start strategy, which is described in the next section, as a further step. In addition to various methods provided for the object such as <code>summary</code>, <code>coef</code>, <code>predict</code> and <code>print</code>, a user can use <code>plot</code> to visualize the CV relative error (CV SSE/SST) versus the number of derived predictors in the model.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Summarize the fitted CTR model</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cvCTR.fit)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Coefficient Tree Regression</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n = 5000 </span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; p = 50 </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; k = 20 (number of derived predictors at termination)</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46 predictors included in 20 groups at termination </span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Training r.squared (at termination) = 0.8986, CV r.squared = 0.8962</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Final group structure:</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (Group)(Size)(alpha)(Ids)</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  1 1.14 {33}</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  2 1.01 {31-32}</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  2 1.39 {34-35}</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  2 1.49 {36-37}</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  2 1.74 {38-39}</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  2 1.89 {41,43}</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  1 2.03 {47}</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  3 2.09 {44,46,48}</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  5 1.95 {40,42,45,49-50}</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10  1 -1.46 {15}</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11  1 -1.55 {14}</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12  2 -1.33 {16-17}</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13  1 -1.08 {20}</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14  2 -1.16 {18-19}</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15  1 -1.67 {13}</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16  1 -1.85 {12}</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17  3 -1.94 {1,4,11}</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18  8 -2 {2-3,5-10}</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  4 -0.06 {24,26-28}</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20  2 0.06 {21,23}</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21  4 0 {22,25,29-30}</span></span></code></pre></div>
+<p>We can plot the CV relative error versus the number of derived predictors in the model.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot CTR CV relative error</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cvCTR.fit)</span></code></pre></div>
+<p><img src="ctr-vignette_files/figure-html/unnamed-chunk-12-1.png" width="768" /></p>
+</div>
+</div>
+<div id="coefficient-tree-regression-with-warm-start-strategy" class="section level1">
+<h1>Coefficient Tree Regression with Warm-Start Strategy</h1>
+<div id="description-2" class="section level2">
+<h2>Description</h2>
+<p>A user must select <code>Kmax</code>. In general, <code>Kmax = 20</code> is sufficient. See Section 5 in the Sürer et. al. (2020) reference paper listed below for details. However, in some cases a better model might be obtained with <code>Kmax &gt; 20</code>. In this case, one should increase <code>Kmax</code> to a larger value (i.e., <code>Kmax = 40</code>) and compare the CV SSE of the larger fitted models. After increasing <code>Kmax</code> in this manner, instead of running the CTR algorithm and CV from scratch, one can use a warm-start strategy in which the <code>CTR</code> object for the initial <code>Kmax</code> are given as input to <code>warm.start</code>.</p>
+</div>
+<div id="usage-2" class="section level2">
+<h2>Usage</h2>
+<p><code>CTR(X, y, Kmax = 40, cv = 10, warm.start = cvCTR.fit)</code></p>
+</div>
+<div id="example-with-cv-and-warm-start-strategy" class="section level2">
+<h2>Example (with CV and warm-start strategy)</h2>
+<p>In the previous example, we set <code>Kmax = 20</code>, <code>cv = 10</code> and <code>warm.start = NULL</code> to obtain the best model size via 10-fold CV without a warm-start strategy. We obtained <code>cvCTR.fit</code>, which is an object of class <code>CTR</code> containing all the relevant information of the fitted model. It also contains the fitted models of size <span class="math inline">\(k = 1, 2, \ldots, 20\)</span>, the CV SSE values for each size model and the CV partition indices for further use. In this example, we increase <code>Kmax = 20</code> to <code>Kmax = 25</code> (although there is no indication that the larger model is better, we set <code>Kmax = 25</code> to illustrate <code>warm.start</code> option) and <code>cvCTR.fit</code> is given as input to the continuation of the <code>CTR</code>. Since CV does not run from scratch and the same CV partition indices are used for the continuation, CV SSEs for <span class="math inline">\(k = 1, 2, \ldots, 20\)</span> stay the same.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit CTR using CV with warm-start strategy</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cvCTR.fit.warmstart <span class="ot">&lt;-</span> <span class="fu">CTR</span>(X, y, <span class="at">Kmax =</span> <span class="dv">25</span>, <span class="at">cv =</span> <span class="dv">10</span>, <span class="at">warm.start =</span> cvCTR.fit)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Start cross-validation</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; End cross-validation</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ...........................</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Optimal group number : 25</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ...........................</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot relative errors with 25 derived predictors</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cvCTR.fit.warmstart)</span></code></pre></div>
+<p><img src="ctr-vignette_files/figure-html/unnamed-chunk-14-1.png" width="768" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Summarize the fitted CTR model</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cvCTR.fit.warmstart)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Coefficient Tree Regression</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n = 5000 </span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; p = 50 </span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; k = 25 (number of derived predictors at termination)</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48 predictors included in 25 groups at termination </span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Training r.squared (at termination) = 0.8987, CV r.squared = 0.8963</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Final group structure:</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (Group)(Size)(alpha)(Ids)</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  1 1.14 {33}</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  1 1.03 {32}</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  1 0.98 {31}</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  2 1.39 {34-35}</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  2 1.49 {36-37}</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  2 1.74 {38-39}</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  2 1.89 {41,43}</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  1 2.03 {47}</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  3 2.09 {44,46,48}</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10  5 1.95 {40,42,45,49-50}</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11  1 -1.46 {15}</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12  1 -1.55 {14}</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13  1 -1.37 {16}</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14  1 -1.3 {17}</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15  1 -1.09 {20}</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16  2 -1.16 {18-19}</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17  1 -1.67 {13}</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18  1 -1.85 {12}</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  3 -1.94 {1,4,11}</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20  3 -2.03 {2-3,8}</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21  5 -1.99 {5-7,9-10}</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22  2 -0.09 {24,28}</span></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23  2 -0.04 {26-27}</span></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24  2 0.06 {21,23}</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25  2 0.02 {22,30}</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26  2 0 {25,29}</span></span></code></pre></div>
+</div>
+</div>
+<div id="reference" class="section level1">
+<h1>Reference</h1>
+<p><strong>Özge Sürer</strong>, Daniel Apley, Edward C. Malthouse. Coefficient tree regression: Fast, accurate and interpretable predictive modeling</p>
+</div>
+</div>
+
+   
+   
+            
+      
+
+  <script>
+    $(document).ready(function () {
+
+			
+ 		
+		$('#content img').addClass("image-lb");
+	$('#content').magnificPopup({
+	    type:'image',
+	    closeOnContentClick: false,
+	    closeBtnInside: false,
+	    delegate: 'img',
+	    gallery: {enabled: true },
+	    image: {
+	        verticalFit: true,
+		titleSrc: 'alt'
+	    }
+ 	});
+ 	    });
+  </script>
+
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
+</body>
+</html>
