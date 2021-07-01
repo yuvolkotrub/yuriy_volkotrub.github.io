@@ -238,7 +238,15 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-
+  # _software
+  - scope:
+      path: ""
+      type: software
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
 # Sass/SCSS
 sass:
   sass_dir: _sass
