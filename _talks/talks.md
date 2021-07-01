@@ -10,11 +10,11 @@ author_profile: true
 Presentations & Invited Talks
 ======
 
-1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. \textit{Alberta School of Business}, University of Alberta, Alberta, Canada, 2020.
+1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. *Alberta School of Business*, University of Alberta, Alberta, Canada, 2020.
 
-1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. \textit{David Nazarian College of Business and Economics}, California State University, Northridge, CA, 2020.
+1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. *David Nazarian College of Business and Economics*, California State University, Northridge, CA, 2020.
 
-1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. \textit{Tippie College of Business}, University of Iowa, Iowa City, IA, 2019.
+1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. *Tippie College of Business*, University of Iowa, Iowa City, IA, 2019.
 
 1. **Özge Sürer**, Daniel Apley, Edward C. Malthouse. Coefficient tree regression for discovering structure in generalized linear models. *INFORMS Annual Meeting*, 2019.
 
