@@ -10,7 +10,7 @@ author_profile: true
 Journal Publications
 ======
 
-1. **Özge Sürer**, Daniel Apley, Edward C. Malthouse. Coefficient tree regression for discovering structure in generalized linear models. *Statistical Analysis and Data Mining*, 2021.
+1. **Özge Sürer**, Daniel W. Apley, Edward C. Malthouse. Coefficient tree regression for generalized linear models. *Statistical Analysis and Data Mining*, 2021. [[link](https://onlinelibrary.wiley.com/doi/10.1002/sam.11534)]
 
 1. Haoxiang Yang, **Özge Sürer**, Daniel Duque, David Morton, Bismark Singh, Spencer Fox, Remy Pasco, Kelly Pierce, Paul Rathouz, Zhanwei Du, Michael Pignone, Mark E. Escott, Stephen I. Adler, Clairborne Johnston, Lauren Ancel Meyers. Design of COVID-19 staged alert systems to ensure healthcare capacity with minimal closures. *Nature Communications*, 12, 3767, 2021. [[link](https://www.nature.com/articles/s41467-021-23989-x)]
 
