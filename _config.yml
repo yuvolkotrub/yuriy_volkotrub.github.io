@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yuriy Volkotrub / Ph.D. Student, Researcher at Jagiellonian University"
+title                    : "Yuriy Volkotrub "
 title_separator          : "-"
 name                     : &name "Yuriy Volkotrub"
 description              : &description "personal description"
@@ -80,41 +80,42 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  name             : "Yuriy Volkotrub"
+  avatar           : "picture.jpg"
+  bio              : "Ph.D. Student, Researcher at Jagiellonian University"
   location         : "Location"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "academicpages"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "replacethistwitterhandle"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+#  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  email            : "yuvolkotrub@gmail.com"
+  linkedin         : "yuriy-volkotrub-b84299176"
+  googlescholar    : "https://scholar.google.com/citations?user=_hxi3yMAAAAJ&hl=en"
+  orcid            : "https://orcid.org/0000-0002-3114-3798"
+  researchgate     : "https://www.researchgate.net/profile/Yuriy-Volkotrub-2"
+  github           : "yuvolkotrub"
+#  uri              :
+#  bitbucket        :
+#  codepen          :
+#  dribbble         :
+#  flickr           :
+#  facebook         :
+#  foursquare       :
+
+#  google_plus      :
+#  keybase          :
+#  instagram        :
+#  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+#  lastfm           : "nerdb0t"
+#  pinterest        :
+#  soundcloud       :
+#  stackoverflow    : # http://stackoverflow.com/users/123456/username
+#  steam            :
+#  tumblr           :
+#  twitter          : "replacethistwitterhandle"
+#  vine             :
+#  weibo            :
+#  xing             :
+#  youtube          :
+#  wikipedia        :
 
 
 # Reading Files
