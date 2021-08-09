@@ -10,7 +10,7 @@ author_profile: true
 Presentations and conference proceedings
 ======
 
-1. **Yu. Volkotrub**. Covariance matrix of nucleon-nucleon potential parameters in few-nucleon systems. Yamada Conference LXXII (online): The 8th Asia-Pacific conference (online) on Few-Body problems in Physics (APFB2020), March 1-5, 2021, Kanazawa, Japan.
+1. **Yu. Volkotrub**. Covariance matrix of nucleon-nucleon potential parameters in few-nucleon systems. *Yamada Conference LXXII (online): The 8th Asia-Pacific conference (online) on Few-Body problems in Physics (APFB2020), March 1-5, 2021, Kanazawa, Japan*.
 
 1. **Yu. Volkotrub**. Uncertainty quantification among three-nucleon scattering observables obtained with the SMS NN chiral force (talk). *The 5th Meeting (online) of the Low Energy Nuclear Physics International Collaboration (LENPIC2020)*.
 
