@@ -14,4 +14,4 @@ Research interests:
 
 * Methodology: Statistical and Machine Learning, Predictive Models, Data Analysis/Mining
 
-* Applications: Recommender Systems, Public Health, Nuclear Physics
+* Applications: Recommender Systems, Public Health, Physical-Statistical Models

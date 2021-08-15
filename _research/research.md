@@ -7,7 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-Bayesian analysis of nuclear dynamics
+Bayesian analysis of physical-statistical models
 ======
 
 With the increased access to parallel computing environments, computer models have become pervasive throughout much of science to understand large and complex physical processes in many engineering and science disciplines. These models can be used for system design and optimization, forecasting and prediction, and to guide future data collection. Two major challenges exist in the usage of these models: the presence of unknown or observable parameters which must be inferred using data and the reality that all models are at least somewhat wrong. While there are Bayesian statistical tools to handle this in theory, this project aims to use computational research to transform these theoretical relationships into tools and techniques for making reliable computational predictions of complex systems with well-quantified uncertainties. This requires using cutting edge research in machine learning and statistical learning that can handle big data environments. The focus of my postdoctoral project is on building cyberinfrastructure for problems in the nuclear-physics (NP) domain. You can find more about the [Bayesian analysis of nuclear dynamics framework](https://bandframework.github.io) from the link.
