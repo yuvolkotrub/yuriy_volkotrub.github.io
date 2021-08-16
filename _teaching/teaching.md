@@ -15,7 +15,7 @@ title: "Teaching"
 
 - Teaching Assistant
     - WFAIS.IF-M102.0 Probability and Statistics (Undergraduate level) (Winter 2017, Spring 2018)
-        - Led weekly classes of the course "Probability and Statistics" for Computer Science students.
+        - Conducted “Probability and Statistics” course for students of the second year of computer science.
 
 - Workshop/Lab Instructor
     - WFAIS.IF-IM Materials Research Laboratory I (Undergraduate level) (Fall 2016)
