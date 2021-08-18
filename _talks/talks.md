@@ -10,6 +10,10 @@ author_profile: true
 Presentations & Invited Talks
 ======
 
+1. **Özge Sürer**, Matthew Plumlee. Calibration using emulation offiltered simulation results. *INFORMS Annual Meeting*, Anaheim, CA, 2021. (upcoming)
+
+1. **Özge Sürer**, Matthew Plumlee. Calibration using emulation of filtered simulation results. *Winter Simulation Conference*, Phoenix, AZ, 2021. (upcoming)
+
 1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. *Alberta School of Business*, University of Alberta, Alberta, Canada, 2020.
 
 1. **Özge Sürer**. Coefficient tree regression: Fast, accurate and interpretable predictive modeling. *David Nazarian College of Business and Economics*, California State University, Northridge, CA, 2020.
