@@ -7,33 +7,32 @@ author_profile: true
 
 {% include base_path %}
 
-Journal Publications
+Peer-Reviewed Journal Publications
 ======
 
 1. **Özge Sürer**, Daniel Apley, Edward C. Malthouse. Coefficient tree regression:  Fast, accurate and interpretable predictive modeling. *Machine Learning* (tentatively accepted), 2021.
 
-1. **Özge Sürer**, Daniel W. Apley, Edward C. Malthouse. Coefficient tree regression for generalized linear models. *Statistical Analysis and Data Mining*, 2021. [[link](https://onlinelibrary.wiley.com/doi/10.1002/sam.11534)]
+2. **Özge Sürer**, Daniel W. Apley, Edward C. Malthouse. Coefficient tree regression for generalized linear models. *Statistical Analysis and Data Mining*, 2021. [[link](https://onlinelibrary.wiley.com/doi/10.1002/sam.11534)]
 
-1. Haoxiang Yang, **Özge Sürer**, Daniel Duque, David Morton, Bismark Singh, Spencer Fox, Remy Pasco, Kelly Pierce, Paul Rathouz, Zhanwei Du, Michael Pignone, Mark E. Escott, Stephen I. Adler, Clairborne Johnston, Lauren Ancel Meyers. Design of COVID-19 staged alert systems to ensure healthcare capacity with minimal closures. *Nature Communications*, 12, 3767, 2021. [[link](https://www.nature.com/articles/s41467-021-23989-x)]
+3. Haoxiang Yang, **Özge Sürer**, Daniel Duque, David Morton, Bismark Singh, Spencer Fox, Remy Pasco, Kelly Pierce, Paul Rathouz, Zhanwei Du, Michael Pignone, Mark E. Escott, Stephen I. Adler, Clairborne Johnston, Lauren Ancel Meyers. Design of COVID-19 staged alert systems to ensure healthcare capacity with minimal closures. *Nature Communications*, 12, 3767, 2021. [[link](https://www.nature.com/articles/s41467-021-23989-x)]
 
-1. Seda Yanik, **Özge Sürer**, Basar Oztaysi. Designing sustainable energy regions using genetic algorithms and location-allocation approach. *Energy*, 161--172. 2016. [[link](https://www.sciencedirect.com/science/article/pii/S0360544215017612)]
+4. Seda Yanik, **Özge Sürer**, Basar Oztaysi. Designing sustainable energy regions using genetic algorithms and location-allocation approach. *Energy*, 161--172. 2016. [[link](https://www.sciencedirect.com/science/article/pii/S0360544215017612)]
+
+Peer-Reviewed Conference Proceedings
+======
+
+5. **Özge Sürer**, Matthew Plumlee. Calibration using Emulation of Filtered Simulation Results. *Proceedings of Winter Simulation Conference*, 2021 (accepted).
+
+6. **Özge Sürer**, Robin Burke, Edward C. Malthouse. Multistakeholder recommendation with provider constraints. *Proceedings of the 12th ACM Conference on Recommender Systems*, 54--62, 2018. [[link](https://dl.acm.org/citation.cfm?id=3240350)]
+
+7. **Özge Sürer**. Improving similarity measures using ontological data. *Proceedings of the 11th ACM Conference on Recommender Systems*, 416--420, 2017. [[link](https://dl.acm.org/citation.cfm?id=3109863)]
 
 Under Review & In Preparation
 ======
 
-1. Paul J. Rathouz, Victoria Valencia, Patrick Chang, David P. Morton, Haoxiang Yang, **Özge Sürer**, Spencer J. Fox, Elizabeth C. Matsui, Alex B. Haynes, Lauren A. Meyers. Survival analysis methods for analysis of hospitalization data: Application to COVID-19 patient hospitalization experience. Submitted. [[link](https://www.medrxiv.org/content/10.1101/2021.04.14.21255511v1)].
+8. **Özge Sürer**, Daniel Apley, Edward C. Malthouse. Discovering structure in longitudinal data via coefficient tree regression. In preparation.
 
-1. **Özge Sürer**, Daniel Apley, Edward C. Malthouse. Discovering structure in longitudinal data via coefficient tree regression. In preparation.
-
-
-Conference Proceedings
-======
-
-1. **Özge Sürer**, Matthew Plumlee. Calibration using Emulation of Filtered Simulation Results. *Proceedings of Winter Simulation Conference*, 2021 (accepted).
-
-1. **Özge Sürer**, Robin Burke, Edward C. Malthouse. Multistakeholder recommendation with provider constraints. *Proceedings of the 12th ACM Conference on Recommender Systems*, 54--62, 2018. [[link](https://dl.acm.org/citation.cfm?id=3240350)]
-
-1. **Özge Sürer**. Improving similarity measures using ontological data. *Proceedings of the 11th ACM Conference on Recommender Systems*, 416--420, 2017. [[link](https://dl.acm.org/citation.cfm?id=3109863)]
+9. Paul J. Rathouz, Victoria Valencia, Patrick Chang, David P. Morton, Haoxiang Yang, **Özge Sürer**, Spencer J. Fox, Elizabeth C. Matsui, Alex B. Haynes, Lauren A. Meyers. Survival analysis methods for analysis of hospitalization data: Application to COVID-19 patient hospitalization experience. Submitted. [[link](https://www.medrxiv.org/content/10.1101/2021.04.14.21255511v1)].
 
 Technical Reports
 ======
