@@ -27,15 +27,17 @@ Teaching experience
      * **Northwestern University, Master of Science in Analytics**
           - MSIA 421 Data Mining (Graduate level) (Winter 2018)
 
-* **Grader**    
-     * **Northwestern University, Master of Engineering Management**
-        - MEM 407 Decision Tools for Managers (Graduate level) (Fall 2017, Winter 2018)
 
 Mentorship experience		
 ======
+* **Doctoral student**
+    * **Bayesian Analysis of Nuclear Dynamics Collaboration, Summer Fellow**
+        + Yuriy Volkotrub (June 2020--September 2020)
+          *Building a statistical method for quantifying the uncertainty in a physics model*
 
 * **Undergraduate students**
     * **Northwestern University, Industrial Engineering and Management Sciences Department**
-        + Achyut Kasi, Cindy Sanchez (June 2020--September 2020)
-        + Aneesh Kudaravalli, Katherine Johns, Margot Dupeyroux, Robert Wong, Yun Hwan Choi (September 2020--December 2020)
         + Huangda Shang (September 2020--March 2021)
+        + Aneesh Kudaravalli, Katherine Johns, Margot Dupeyroux, Robert Wong, Yun Hwan Choi (September 2020--December 2020
+        + Achyut Kasi, Cindy Sanchez (June 2020--September 2020)
+)
