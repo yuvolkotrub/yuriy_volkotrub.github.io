@@ -33,11 +33,15 @@ Mentorship experience
 * **Doctoral student**
     * **Bayesian Analysis of Nuclear Dynamics Collaboration, Summer Fellow**
         + Yuriy Volkotrub (June 2020--September 2020)
-          *Building a statistical method for quantifying the uncertainty in a physics model*
+          - Building a statistical method for quantifying the uncertainty in a physics model*
 
 * **Undergraduate students**
     * **Northwestern University, Industrial Engineering and Management Sciences Department**
+        + Justin Chen (June 2020--September 2020)
+          - Integration of visualization and diagnostics modules to the Python package surmise
         + Huangda Shang (September 2020--March 2021)
-        + Aneesh Kudaravalli, Katherine Johns, Margot Dupeyroux, Robert Wong, Yun Hwan Choi (September 2020--December 2020
+          - Alternative solutions of COVID-19 staged alert systems via derivative-free optimization methods
+        + Aneesh Kudaravalli, Katherine Johns, Margot Dupeyroux, Robert Wong, Yun Hwan Choi (September 2020--December 2020)
+          - Investigation of dierent trigger metrics for COVID-19 staged alert systems
         + Achyut Kasi, Cindy Sanchez (June 2020--September 2020)
-)
+          - Development of a module to produce graphs and reports automatically for the COVID-19 staged alert system
