@@ -32,7 +32,7 @@ Conference Proceedings
 
 1. **Yu. Volkotrub**, J. Golak, R. Skibiński, K. Topolnicki, H. Witała. Correlation and regression analysis of 2N scattering observables. *Advances on the Few-Body Problem in Physics – Selected and Refereed papers from the 8th Asia-Pacific Conference March 2021 (online)*, [Few-Body Syst **62**, 88 (2021).](https://doi.org/10.1007/s00601-021-01679-0)
 
-1. **Yu. Volkotrub**. Correlations of observables in 2N and 3N systems. *The 45th Congress of Polish Physicists, September 2019 Cracow, Poland*, [Acta Phys. Pol. B Proc. Suppl. 13, 971 (2020).](https://www.actaphys.uj.edu.pl/fulltext?series=Sup&vol=13&page=971)
+1. **Yu. Volkotrub**. Correlations of observables in 2N and 3N systems. *The 45th Congress of Polish Physicists, September 2019 Cracow, Poland*, [Acta Phys. Pol. B Proc. Suppl. **13**, 971 (2020).](https://www.actaphys.uj.edu.pl/fulltext?series=Sup&vol=13&page=971)
 
 1. J. Golak,  H. Witała, R. Skibiński, K. Topolnicki, **Yu. Volkotrub**, A. Grassi, V. Soloviov, V. Urbanevych. Theoretical investigations of three-nucleon systems. *The 45th Congress of Polish Physicists, September 2019 Cracow, Poland*, [Acta Phys. Pol. B Proc. Suppl. **13**, 609 (2020).](https://www.actaphys.uj.edu.pl/fulltext?series=Sup&vol=13&page=609)
 
