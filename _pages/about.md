@@ -13,9 +13,9 @@ My research interests include few-body physics problems and advanced topics of q
 
 [Download Dissertation]({{https://yuvolkotrub.github.io/}}/files/pdf/Dissertation_Volkotrub.pdf)
 
-[Review 1 (EN)]({{https://yuvolkotrub.github.io/}}/files/pdf/Magierski.pdf)
+#[Review 1 (EN)]({{https://yuvolkotrub.github.io/}}/files/pdf/Magierski.pdf)
 
-[Review 2 (PL)]({{https://yuvolkotrub.github.io/}}/files/pdf/Szczurek.pdf)
+#[Review 2 (PL)]({{https://yuvolkotrub.github.io/}}/files/pdf/Szczurek.pdf)
 
 
 
