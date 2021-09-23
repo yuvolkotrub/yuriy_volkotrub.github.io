@@ -10,9 +10,11 @@ author_profile: true
 Presentations & Invited Talks
 ======
 
+1. (upcoming) INFORMS Workshop on Data Mining and Decision Analytics, Anaheim, CA, 2021. *Discovering group structure in longitudinal data.*
+
 1. (upcoming) INFORMS Annual Meeting, Anaheim, CA, 2021. *Calibration using emulation offiltered simulation results.*
 
-1. (upcoming) Winter Simulation Conference, Phoenix, AZ, 2021. *Calibration using emulation offiltered simulation results.* 
+1. (upcoming) Winter Simulation Conference, Phoenix, AZ, 2021. *Calibration using emulation offiltered simulation results.*
 
 1. Alberta School of Business, University of Alberta, Alberta, Canada, 2020. *Coefficient tree regression: Fast, accurate and interpretable predictive modeling.*
 

@@ -34,24 +34,3 @@ ACADEMIC & PROFESSIONAL EXPERIENCE
 
 * Spiegel Research Center/Northwestern University
     + Research Fellow, September 2016 – September 2020
-
-TEACHING EXPERIENCE
-======
-
-<ul>{% for post in site.teaching %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
-
-PUBLICATIONS & WORKING PAPERS
-======
-
-<ul>{% for post in site.publications %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
-
-PRESENTATIONS & INVITED TALKS
-======
-
-<ul>{% for post in site.talks %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
