@@ -12,6 +12,9 @@ I have currently completed my Ph.D. studies and submitted my doctoral dissertati
 My research interests include few-body physics problems and advanced topics of quantum mechanics, focusing on nuclear physics applications. I'm also particularly interested in uncertainty quantification of nuclear structure and nuclear reaction calculations and the practical realization of the Bayesian statistical methods and machine learning for physical problems.
 
 [Download Dissertation]({{https://yuvolkotrub.github.io/}}/files/pdf/Dissertation_Volkotrub.pdf)
+[Review 1 (EN)]({{https://yuvolkotrub.github.io/}}/files/pdf/Magierski.pdf)
+[Review 2 (PL)]({{https://yuvolkotrub.github.io/}}/files/pdf/Szczurek.pdf)
+
 
 
 <!---
