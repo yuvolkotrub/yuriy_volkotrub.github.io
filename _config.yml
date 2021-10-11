@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Yuriy Volkotrub"
   avatar           : "picture.jpg"
-  bio              : "Ph.D. candidate, Researcher at Jagiellonian University"
+  bio              : "Ph.D. in Theoretical Nuclear Physics"
   location         : "Cracow, Poland"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -176,6 +176,9 @@ kramdown:
 
 # Collections
 collections:
+  research:
+    output: true
+    permalink: /:collection/:path/
   teaching:
     output: true
     permalink: /:collection/:path/
@@ -223,6 +226,15 @@ defaults:
   - scope:
       path: ""
       type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _research
+  - scope:
+      path: ""
+      type: research
     values:
       layout: single
       author_profile: true

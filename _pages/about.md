@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I have currently completed my Ph.D. studies and submitted my doctoral dissertation at the Marian Smoluchowski Institute of Physics of the Jagiellonian University. 
+I have currently defended my Ph.D. thesis at the Marian Smoluchowski Institute of Physics of the Jagiellonian University. 
 
 My research interests include few-body physics problems and advanced topics of quantum mechanics, focusing on nuclear physics applications. I'm also particularly interested in uncertainty quantification of nuclear structure and nuclear reaction calculations and the practical realization of the Bayesian statistical methods and machine learning for physical problems.
 
