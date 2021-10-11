@@ -1,7 +1,7 @@
 ---
 layout: archive
-permalink: /teaching/
-title: "Teaching"
+permalink: /research/
+title: "Research"
 ---
 
 ## Jagiellonian University, Faculty of Physics, Astronomy and Applied Computer Science
