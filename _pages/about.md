@@ -13,13 +13,13 @@ My research interests include few-body physics problems and advanced topics of q
 
 [Download Dissertation]({{https://yuvolkotrub.github.io/}}/files/pdf/Dissertation_Volkotrub.pdf)
 
-=======
+
 <!---[Review 1 (EN)]({{https://yuvolkotrub.github.io/}}/files/pdf/Magierski.pdf)
 
-#[Review 2 (PL)]({{https://yuvolkotrub.github.io/}}/files/pdf/Szczurek.pdf)
+[Review 2 (PL)]({{https://yuvolkotrub.github.io/}}/files/pdf/Szczurek.pdf)
 -->
 
->>>>>>> origin
+
 
 <!---
 My research interests are uncertainty quantification, model-based machine learning, novel applications of Bayesian statistics, and theoretical nuclear physics. This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
