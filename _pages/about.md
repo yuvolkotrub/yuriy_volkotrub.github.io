@@ -7,9 +7,13 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I have currently defended my Ph.D. thesis at the Marian Smoluchowski Institute of Physics of the Jagiellonian University. 
+I am a postdoctoral research fellow at the AGH University of Science and Technology. I am involved in the study of relativistic heavy ion collisions as a member of the AGH Heavy-Ion Collision Physics group from the ATLAS collaboration.
 
-My research interests include few-body physics problems and advanced topics of quantum mechanics, focusing on nuclear physics applications. I'm also particularly interested in uncertainty quantification of nuclear structure and nuclear reaction calculations and the practical realization of the Bayesian statistical methods and machine learning for physical problems.
+My current research activities are focused on the study of relativistic heavy-ion collisions. The goal of this field of nuclear physics is to study the formation and subsequent evolution of hot and very dense states of nuclear matter, and better understand non-perturbative quantum chromodynamics (QCD) through the study of hadronic matter under extreme conditions. At high densities and temperatures hadronic matter is expected to undergo a phase transition to a deconfined state, the Quark-Gluon Plasma (QGP), where quarks are no longer bound in colorless hadrons. Exact nature of quark confinement in hadrons is crucial and poorly understood aspect of the quark-gluon description of matter. QGP is believed to have existed during the first microseconds after the Big Bang, and understanding of its properties could provide valuable insights on the evolution of our Universe. 
+
+My particular research interests are centered around a measurement of light-by-light scattering based on Pb+Pb collision data recorded by the ATLAS experiment during Run 2 of the LHC.
+
+My research interests also cover few-body physics problems and advanced topics of quantum mechanics, focusing on nuclear physics applications at the low-energy regime (at energies below the pion production threshold). I'm also particularly interested in uncertainty quantification of nuclear structure and nuclear reaction calculations and the practical realization of the Bayesian statistical methods and machine learning for physical problems.
 
 [Download Dissertation]({{https://yuvolkotrub.github.io/}}/files/pdf/Dissertation_Volkotrub.pdf)
 
