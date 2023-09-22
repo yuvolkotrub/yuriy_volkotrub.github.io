@@ -22,11 +22,6 @@ Journal Publications
 
 1. R. Skibiński, J. Golak, K. Topolnicki, H. Witała, and **Yu. Volkotrub** *et al*. Nucleon-deuteron scattering with the JISP16 potential. [*Phys. Rev. C 97, 014002 (2018).*](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.97.014002)
 
-Under Review
-======
-
-1. Yu. Volkotrub, J. Golak, R. Skibiński, K. Topolnicki, H. Witała. Correlations among 2N and 3N observables. In preparation.
-
 Conference Proceedings
 ======
 
