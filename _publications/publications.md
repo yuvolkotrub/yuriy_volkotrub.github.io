@@ -10,9 +10,11 @@ author_profile: true
 Journal Publications
 ======
 
+1. **Yu. Volkotrub**, R. Skibiński, J. Golak, H. Witała. Correlations among neutron-proton and neutron-deuteron elastic scattering observables. [*Phys. Rev. C **106**, 034002 (2022)*.](https://doi.org/10.1103/PhysRevC.106.034002)
+
 1. P. Maris, E. Epelbaum, R. J. Furnstahl, J. Golak, K. Hebeler, T. Hüther, H. Kamada, H. Krebs, Ulf-G. Meißner, J. A. Melendez, A. Nogga, P. Reinert, R. Roth, R. Skibiński, V. Soloviov, K. Topolnicki, J. P. Vary, **Yu. Volkotrub**, H. Witała, T. Wolfgruber. Light nuclei with semilocal momentum-space regularized chiral interactions up to third order. [*Phys. Rev. C **103**, 054001 (2021) (Editors' suggestion)*.](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.103.054001) 
 
-1. **Yu. Volkotrub**, J. Golak, R. Skibiński K. Topolnicki, H. Witała, E. Epelbaum, H. Krebs, P. Reinert. Uncertainty of three-nucleon continuum observables arising from uncertainties of two-nucleon potential parameters. [*J. Phys. G: Nucl. Part. Phys. 47 104001 (2020).*](https://iopscience.iop.org/article/10.1088/1361-6471/ab9b07)
+1. **Yu. Volkotrub**, J. Golak, R. Skibiński, K. Topolnicki, H. Witała, E. Epelbaum, H. Krebs, P. Reinert. Uncertainty of three-nucleon continuum observables arising from uncertainties of two-nucleon potential parameters. [*J. Phys. G: Nucl. Part. Phys. 47 104001 (2020).*](https://iopscience.iop.org/article/10.1088/1361-6471/ab9b07)
 
 1. E. Epelbaum, J. Golak, K. Hebeler, H. Kamada, H. Krebs, U.-G. Meißner, A. Nogga, P. Reinert, R. Skibiński, K. Topolnicki, **Yu. Volkotrub**, and H. Witała. Towards high-order calculations of three-nucleon scattering in chiral effective field theory. [*Eur. Phys. J. A 56:92 (2020).*](https://link.springer.com/article/10.1140%2Fepja%2Fs10050-020-00102-2)
 
