@@ -4,6 +4,10 @@ permalink: /research/
 title: "Research"
 ---
 
+## AGH University of Kraków, Faculty of Physics and Applied Informatics
+- Teaching Assistant
+    - Tutor of exercise classes in Data Analysis for students in Technical Physics of the second cycle, AGH University of Kraków.
+
 ## Jagiellonian University, Faculty of Physics, Astronomy and Applied Computer Science
 - Workshop/Lab Instructor
     - Laboratory classes in the 1st Physics Laboratory (Spring/Summer 2019)
