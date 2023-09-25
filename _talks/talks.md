@@ -10,6 +10,8 @@ author_profile: true
 Presentations and conference proceedings
 ======
 
+1. **Yu. Volkotrub**. Electron and Photon reconstruction optimization for UPC in Pb+Pb collision (talk). [*Egamma 2023 workshop](https://indico.cern.ch/event/1245976/), March 14-17, 2022, CERN (Geneva), Switzerland*. 
+
 1. **Yu. Volkotrub**. Covariance matrix of nucleon-nucleon potential parameters in few-nucleon systems (talk). *Yamada Conference LXXII (online): The 8th Asia-Pacific conference (online) on Few-Body problems in Physics (APFB2020), March 1-5, 2021, Kanazawa, Japan*.
 
 1. **Yu. Volkotrub**. Uncertainty quantification among three-nucleon scattering observables obtained with the SMS NN chiral force (talk). *The 5th Meeting (online) of the Low Energy Nuclear Physics International Collaboration (LENPIC2020)*.
