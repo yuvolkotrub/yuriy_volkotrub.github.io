@@ -4,6 +4,10 @@ permalink: /teaching/
 title: "Teaching"
 ---
 
+## AGH University of Kraków, Faculty of Physics and Applied Informatics
+- Teaching Assistant (Spring/Summer 2023)
+    - Tutor of exercise classes in Data Analysis for students in Technical Physics of the second cycle, AGH University of Kraków.
+
 ## Jagiellonian University, Faculty of Physics, Astronomy and Applied Computer Science
 - Workshop/Lab Instructor
     - Laboratory classes in the 1st Physics Laboratory (Spring/Summer 2019)
